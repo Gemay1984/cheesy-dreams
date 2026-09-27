@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cheesy Dreams Cheesecake</title>
+
+    <style>
+        /* ===== GENERAL ===== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: "Trebuchet MS", Arial, sans-serif;
+            background-color: #fffaf5;
+            color: #5f4b45;
+            line-height: 1.7;
+        }
+
+        /* ===== NAVBAR ===== */
+        nav {
+            background-color: #f8dfe5;
+            padding: 18px 8%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 3px 12px rgba(0,0,0,0.08);
+        }
+
+        .logo {
+            font-size: 25px;
+            font-weight: bold;
+            color: #8c5b66;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 25px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #6d5158;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        nav a:hover {
+            color: #d58a9d;
+        }
+
+        /* ===== HERO ===== */
+        .hero {
+            min-height: 90vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 50px 20px;
+            background: linear-gradient(
+                135deg,
+                #fff1d6,
+                #fde3e8,
+                #e9f5df
+            );
+        }
+
+        .hero-content {
+            max-width: 850px;
+        }
+
+        .hero h1 {
+            font-size: 70px;
+            color: #8b5964;
+            margin-bottom: 10px;
+            letter-spacing: 2px;
+        }
+
+        .hero h2 {
+            font-size: 28px;
+            color: #9c727a;
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            font-size: 20px;
+            color: #6c5953;
+            max-width: 700px;
+            margin: auto;
+        }
+
+        .cake {
+            font-size: 85px;
+            margin-bottom: 10px;
+        }
+
+        .button {
+            display: inline-block;
+            margin-top: 30px;
+            padding: 13px 30px;
+            background-color: #dca6b4;
+            color: white;
+            text-decoration: none;
+            border-radius: 30px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .button:hover {
+            background-color: #c98b9d;
+            transform: translateY(-3px);
+        }
+
+        /* ===== SECTIONS ===== */
+        section {
+            padding: 80px 10%;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 40px;
+            color: #8c606b;
+            margin-bottom: 40px;
+        }
+
+        .section-title::after {
+            content: "";
+            display: block;
+            width: 70px;
+            height: 4px;
+            background-color: #f2c6a0;
+            margin: 12px auto;
+            border-radius: 10px;
+        }
+
+        .text-box {
+            max-width: 900px;
+            margin: auto;
+            background-color: white;
+            padding: 35px;
+            border-radius: 25px;
+            box-shadow: 0 8px 25px rgba(150, 110, 100, 0.10);
+            text-align: center;
+        }
+
+        .text-box p {
+            font-size: 18px;
+        }
+
+        /* ===== MISSION & VISION ===== */
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px;
+            max-width: 1000px;
+            margin: auto;
+        }
+
+        .card {
+            padding: 35px;
+            border-radius: 25px;
+            text-align: center;
+            box-shadow: 0 8px 25px rgba(150, 110, 100, 0.10);
+        }
+
+        .mission {
+            background-color: #fce4e9;
+        }
+
+        .vision {
+            background-color: #e7f2dc;
+        }
+
+        .card h3 {
+            font-size: 28px;
+            color: #805963;
+            margin-bottom: 15px;
+        }
+
+        .icon {
+            font-size: 45px;
+            margin-bottom: 10px;
+        }
+
+        /* ===== PRODUCTS ===== */
+        #products {
+            background-color: #fff2df;
+        }
+
+        .products {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 35px;
+            max-width: 1000px;
+            margin: auto;
+        }
+
+        .product {
+            background-color: white;
+            padding: 35px;
+            border-radius: 30px;
+            text-align: center;
+            box-shadow: 0 8px 25px rgba(150, 110, 100, 0.12);
+            transition: 0.3s;
+        }
+
+        .product:hover {
+            transform: translateY(-8px);
+        }
+
+        .product-icon {
+            font-size: 75px;
+            margin-bottom: 15px;
+        }
+
+        .product h3 {
+            font-size: 27px;
+            color: #8d626c;
+            margin-bottom: 10px;
+        }
+
+        .lemon {
+            border-top: 8px solid #f5df72;
+        }
+
+        .passion {
+            border-top: 8px solid #f3b3a4;
+        }
+
+        /* ===== ACTION ===== */
+        .action-list {
+            max-width: 850px;
+            margin: auto;
+        }
+
+        .action-item {
+            background-color: #ffffff;
+            margin-bottom: 18px;
+            padding: 20px 25px;
+            border-radius: 18px;
+            box-shadow: 0 5px 15px rgba(150, 110, 100, 0.08);
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .action-item span {
+            font-size: 30px;
+        }
+
+        /* ===== FOOTER ===== */
+        footer {
+            background-color: #f5d8df;
+            text-align: center;
+            padding: 35px 20px;
+            color: #70545c;
+        }
+
+        footer h2 {
+            color: #895c68;
+            margin-bottom: 8px;
+        }
+
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 768px) {
+
+            nav {
+                flex-direction: column;
+                gap: 12px;
+            }
+
+            nav ul {
+                gap: 12px;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .hero h1 {
+                font-size: 45px;
+            }
+
+            .hero h2 {
+                font-size: 22px;
+            }
+
+            .hero p {
+                font-size: 17px;
+            }
+
+            .cards,
+            .products {
+                grid-template-columns: 1fr;
+            }
+
+            section {
+                padding: 60px 6%;
+            }
+
+            .section-title {
+                font-size: 32px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- ===== NAVIGATION ===== -->
+    <nav>
+        <div class="logo">🍰 Cheesy Dreams</div>
+
+        <ul>
+            <li><a href="#introduction">Introduction</a></li>
+            <li><a href="#mission">Mission</a></li>
+            <li><a href="#vision">Vision</a></li>
+            <li><a href="#products">Products</a></li>
+            <li><a href="#action">Action</a></li>
+        </ul>
+    </nav>
+
+
+    <!-- ===== HERO ===== -->
+    <header class="hero">
+
+        <div class="hero-content">
+
+            <div class="cake">🍰</div>
+
+            <h1>Cheesy Dreams</h1>
+
+            <h2>Cheesy Dreams Cheesecake</h2>
+
+            <p>
+                Sweet dreams, delicious flavors, and a little piece of happiness
+                in every cheesecake.
+            </p>
+
+            <a href="#products" class="button">
+                Discover Our Flavors
+            </a>
+
+        </div>
+
+    </header>
+
+
+    <!-- ===== INTRODUCTION ===== -->
+    <section id="introduction">
+
+        <h2 class="section-title">1. Introduction</h2>
+
+        <div class="text-box">
+
+            <p>
+                Cheesy Dreams is a school business dedicated to making and selling
+                delicious cheesecakes in two flavors: lemon and passion fruit.
+                Our product aims to offer a sweet, attractive, and high-quality
+                option for students, teachers, and visitors at the school’s
+                business fair.
+            </p>
+
+            <br>
+
+            <p>
+                This idea was created to offer a delicious product while learning
+                about entrepreneurship, organization, customer service, costs,
+                and teamwork through a practical experience.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- ===== MISSION & VISION ===== -->
+    <section id="mission">
+
+        <h2 class="section-title">2. Mission & 3. Vision</h2>
+
+        <div class="cards">
+
+            <div class="card mission">
+
+                <div class="icon">💗</div>
+
+                <h3>Mission</h3>
+
+                <p>
+                    Our mission is to offer delicious, fresh, and well-presented
+                    cheesecakes made with dedication and responsibility.
+                    We aim to provide our customers with a pleasant experience
+                    and a product they will truly enjoy.
+                </p>
+
+            </div>
+
+
+            <div class="card vision" id="vision">
+
+                <div class="icon">🌟</div>
+
+                <h3>Vision</h3>
+
+                <p>
+                    By 2027, we aim for Cheesy Dreams to be recognized within
+                    our school community as a creative and responsible business,
+                    standing out for the quality, flavor, and presentation of
+                    our cheesecakes.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ===== PRODUCTS ===== -->
+    <section id="products">
+
+        <h2 class="section-title">4. Our Product</h2>
+
+        <div class="text-box" style="margin-bottom: 40px;">
+
+            <h3 style="font-size: 30px; color: #8c606b;">
+                Cheesy Dreams Cheesecake
+            </h3>
+
+            <p>
+                Our cheesecake is available in two delicious flavors,
+                created especially for our school business fair.
+            </p>
+
+        </div>
+
+
+        <div class="products">
+
+            <!-- Lemon -->
+            <div class="product lemon">
+
+                <div class="product-icon">🍋</div>
+
+                <h3>Lemon Cheesecake</h3>
+
+                <p>
+                    A fresh and sweet cheesecake with a delicious
+                    lemon flavor.
+                </p>
+
+            </div>
+
+
+            <!-- Passion Fruit -->
+            <div class="product passion">
+
+                <div class="product-icon">💛</div>
+
+                <h3>Passion Fruit Cheesecake</h3>
+
+                <p>
+                    A creamy and delicious cheesecake with the
+                    tropical flavor of passion fruit.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ===== ACTION ===== -->
+    <section id="action">
+
+        <h2 class="section-title">5. Action</h2>
+
+        <div class="action-list">
+
+            <div class="action-item">
+                <span>👩‍🍳</span>
+                <p>
+                    Prepare and sell lemon and passion fruit cheesecakes
+                    during the school’s business fair.
+                </p>
+            </div>
+
+            <div class="action-item">
+                <span>🎀</span>
+                <p>
+                    Use an eye-catching presentation to attract customers.
+                </p>
+            </div>
+
+            <div class="action-item">
+                <span>😊</span>
+                <p>
+                    Provide friendly and respectful customer service.
+                </p>
+            </div>
+
+            <div class="action-item">
+                <span>📱</span>
+                <p>
+                    Promote our products through posters, social media,
+                    and recommendations among students.
+                </p>
+            </div>
+
+            <div class="action-item">
+                <span>💰</span>
+                <p>
+                    Calculate the costs of ingredients and materials to
+                    establish an appropriate price that allows us to
+                    recover our investment and make a profit.
+                </p>
+            </div>
+
+            <div class="action-item">
+                <span>🤝</span>
+                <p>
+                    Work as a team while learning about entrepreneurship,
+                    organization, and responsibility.
+                </p>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ===== FOOTER ===== -->
+    <footer>
+
+        <h2>🍰 Cheesy Dreams 🍋💛</h2>
+
+        <p>
+            Made with love, teamwork, and a little bit of sweetness.
+        </p>
+
+        <p>
+            © 2027 Cheesy Dreams — School Business Fair
+        </p>
+
+    </footer>
+
+</body>
+</html>
